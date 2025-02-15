@@ -1,3 +1,26 @@
-.unvisible{
+.unvisible {
     display: none;
+}
+
+.fa-caret-down {
+    cursor: pointer;
+}
+
+.fa-caret-up {
+    cursor: pointer;
+}
+
+.sortmenu {
+    display: flex;
+    gap: 20px;
+}
+
+.flex-box {
+    display: flex;
+    gap: 50px;
+    margin:0 80px;
+}
+
+.flex{
+    flex:1;
 }

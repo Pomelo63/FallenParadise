@@ -4,9 +4,7 @@ class Router
 {
 
 
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function routerRequest(): void
     {
@@ -17,11 +15,13 @@ class Router
                 if (htmlentities(addslashes($_GET['action']), ENT_QUOTES, 'UTF-8') == 'home') {
                     $view = new View("Home");
                     $view->generer(array(''));
-                }            else     if (htmlentities(addslashes($_GET['action']), ENT_QUOTES, 'UTF-8') == 'login') {
+                } else if (htmlentities(addslashes($_GET['action']), ENT_QUOTES, 'UTF-8') == 'login') {
                     $view = new View("Login");
                     $view->generer(array(''));
-                } 
-                else {
+                } else if (htmlentities(addslashes($_GET['action']), ENT_QUOTES, 'UTF-8') == 'classement') {
+                    $view = new View("Classement");
+                    $view->generer(array(''));
+                } else {
                     throw new Exception("Action non valide");
                 }
             } else {

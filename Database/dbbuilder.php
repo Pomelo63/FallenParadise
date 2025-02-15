@@ -23,20 +23,19 @@ try {
   //Creat all needed table in our DB
   $sql = "
                 /*Création de la table des utilisateurs*/
-                create table USERS (
-                  user_id  integer primary key auto_increment,
-                  user_name varchar(50) not null,
-                  user_email varchar(255) not null unique,
-                  user_password varchar(255) not null,
-                  user_token varchar(100) not null unique,
-                  user_profil varchar(10) not null default 'user'
+                create table Player (
+                  player_id  integer primary key auto_increment,
+                  player_name varchar(50) not null,
+                  player_level integer not null,
+                  player_reputation integer not null,
+                  player_gold integer not null
                 )ENGINE=INNODB CHARACTER SET utf8 COLLATE utf8_general_ci;
 
                 CREATE USER if not exists 'basicuser'@'localhost' IDENTIFIED BY 'password';
                 GRANT SELECT ON * . * TO 'basicuser'@'localhost';
                 
-                insert into USERS(user_name, user_email, user_password,user_profil,user_log,user_token,user_lang) values
-                ('AdminFP',  'admin@fallenparadise.com', '$adminHashedPwd' , 'admin', false, '$bytes', 'fr');
+                insert into Player(player_name, player_level, player_reputation,player_gold) values
+                ('Cromenberg',  '3', '0' , '300');
 
                 ";
 
