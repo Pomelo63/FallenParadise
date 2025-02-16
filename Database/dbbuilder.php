@@ -22,13 +22,20 @@ try {
   $dbco->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   //Creat all needed table in our DB
   $sql = "
-                /*Création de la table des utilisateurs*/
+                /*Création de la table des joueurs*/
                 create table Player (
                   player_id  integer primary key auto_increment,
                   player_name varchar(50) not null,
                   player_level integer not null,
                   player_reputation integer not null,
                   player_gold integer not null
+                )ENGINE=INNODB CHARACTER SET utf8 COLLATE utf8_general_ci;
+                
+                /*Création de la table des images*/
+                create table Images (
+                  img_id  integer primary key auto_increment,
+                  img_src varchar(50) not null,
+                  img_desc varchar(300)  not null
                 )ENGINE=INNODB CHARACTER SET utf8 COLLATE utf8_general_ci;
 
                 CREATE USER if not exists 'basicuser'@'localhost' IDENTIFIED BY 'password';
